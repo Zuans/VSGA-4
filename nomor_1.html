@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form | Native</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,900;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      main {
+        padding: 60px 30px;
+      }
+
+      form {
+        padding: 30px;
+        background-color: #a4907c;
+        border-radius: 10px;
+        color: #fbffdc;
+      }
+
+      form .form-field {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-bottom: 20px;
+      }
+
+      form .form-field label {
+        font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      form .form-field input[type="text"],
+      form .form-field input[type="number"],
+      form .form-field select,
+      form .form-field textarea {
+        padding: 0.5rem 1.25rem;
+        border-radius: 15px;
+        outline: none;
+        border: none;
+      }
+      /* Chrome, Safari, Edge, Opera */
+      form .form-field input::-webkit-outer-spin-button,
+      form .form-field input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      form .form-field input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .form-field div label {
+        font-weight: 400;
+        font-size: 16px;
+        margin-left: 5px;
+      }
+
+      form button {
+        border: none;
+        outline: none;
+        padding: 0.5rem 1.5rem;
+        background-color: #7d6852;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 45px;
+      }
+
+      form button:hover {
+        background-color: #927c63;
+      }
+    </style>
+    <script>
+      alert("Selamat datang silahkan isi formulir ini");
+    </script>
+  </head>
+  <body>
+    <main class="">
+      <div class="container">
+        <form action="" id="form">
+          <div class="form-field">
+            <label for="nama">Nama</label>
+            <input type="text" name="nama" placeholder="John Doe" id="nama" />
+          </div>
+          <div class="form-field">
+            <label for="nim">NIM</label>
+            <input type="number" name="nim" placeholder="0813675123" id="nim" />
+          </div>
+          <div class="form-field">
+            <label for="">Jurusan</label>
+            <select name="jurusan" id="jurusan">
+              <option value="teknik-informatika">Teknik Informatika</option>
+              <option value="sistem-informasi">Sistem Informasi</option>
+              <option value="hukum">Hukum</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="">Jenis Kelamin</label>
+            <div>
+              <input type="radio" name="jenis-kelamin" id="pria" />
+              <label for="pria">Pria</label>
+            </div>
+            <div>
+              <input type="radio" name="jenis-kelamin" id="wanita" />
+              <label for="wanita">Wanita</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="">Status</label>
+            <div>
+              <input type="radio" name="status" id="menikah" />
+              <label for="menikah">Menikah</label>
+            </div>
+            <div>
+              <input type="radio" name="status" id="belum-menikah" />
+              <label for="belum-menikah">Belum Menikah</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="">Keterangan</label
+            ><textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+    <script>
+      const form = document.querySelector("#form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nama = document.querySelector("#nama").value;
+        const konfirmasi = confirm("Apakah anda yakin semua data sudah benar?");
+        if (konfirmasi) {
+          const hobby = prompt("Apa Hobi anda ?");
+          alert(
+            `Terimaksih ${nama} data kamu sudah kami terima termasuk hobby ${hobby} kamu`
+          );
+        } else {
+          alert(`Terimakasih ${nama} data kamu sudah kami terima`);
+        }
+      });
+    </script>
+  </body>
+</html>
